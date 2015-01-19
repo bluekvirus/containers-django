@@ -27,7 +27,7 @@ If you prefer not to run into this problem again, use `fig up --no-recreate -d` 
 
 Customize
 ---------
-Read `docker-image` folder's content and see how we built the default django container.
-Read `fig.yml` and `fig-init` folder's content to see how we orchestrated the dev/deploy environment.
+- Read `docker-image` folder's content and see how we built the default django container.
+- Read `fig.yml` and `fig-init` folder's content to see how we orchestrated the dev/deploy environment.
 
 You will most likely tweak the environment by modifying Fig related files.
