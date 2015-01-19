@@ -31,3 +31,11 @@ Customize
 - Read `fig.yml` and `fig-init` folder's content to see how we orchestrated the dev/deploy environment.
 
 You will most likely tweak the environment by modifying Fig related files.
+
+References
+----------
+- [Docker](http://docs.docker.com/)
+- [Fig](http://www.fig.sh/index.html)
+- [Nginx](http://nginx.org/en/docs/)
+- [Nginx as Proxy/LB](https://www.digitalocean.com/community/tutorials/understanding-nginx-http-proxying-load-balancing-buffering-and-caching)
+- [uwsgi](https://uwsgi-docs.readthedocs.org/en/latest/tutorials/Django_and_nginx.html)
