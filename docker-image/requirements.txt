@@ -1,0 +1,13 @@
+Django
+Unipath
+djangorestframework
+markdown
+django-filter
+django-rest-swagger
+mongoengine
+psycopg2
+django-redis
+Celery
+django-celery
+django-pipeline
+uwsgi

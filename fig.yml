@@ -1,0 +1,31 @@
+#Basic setup: 1 nginx, 1 app, 1 db, 1 cache, 1 mq
+
+db:
+    image: postgres #(SQL)
+    #image: mongo #(NoSQL)
+cache:
+    image: redis
+mq:
+    image: rabbitmq
+
+app:
+    image: bluekvirus/django
+    volumes:
+        - code:/code/django
+        - ./fig-init/app.sh:/metadata/django/init.sh
+    expose:
+        - "80" #default runserver wsgi port
+    links:
+        - db
+        - cache
+        - mq
+    command: /metadata/django/init.sh #(starts app with uwsgi)
+
+web:
+    image: nginx
+    volumes:
+        - ./fig-init/nginx-server.conf:/etc/nginx/conf.d/default.conf #(http)
+    links:
+        - app
+    ports:
+        - "8000:80" #(access through http://<boot2docker ip>:8000 or http://localhost:8000 on non-mac os)
