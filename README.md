@@ -1,7 +1,7 @@
 Django Dev/Deploy Containers
 ============================
 This is the repository for building Django project DevOps environment. 
-You will have a clean & functional environment within 2min.
+You will have a clean & functional environment within **2-min**.
 
 Prerequisite
 ------------
@@ -19,8 +19,8 @@ Put your existing Django project code under `./code`. If the code folder doesn't
 
 - The default setup contains 1 nginx, 1 django, 1 postgres/mongo, 1 redis and 1 rabbitmq.
 - The django project is served through a multi-process `uwsgi` app server in the container.
-- The django container has node 0.10.35+ installed to support `django-pipeline` customization.
 - The django container comes with `django-rest-framework 3` and `Celery 3` installed.
+- `Swagger 2.0` is supported through the `django-rest-swagger` package for RESTful API spec.
 
 Use `django-admin.py` and `manage.py` on the django container for django cli tasks. 
 
@@ -37,6 +37,12 @@ Customize
 - Read `fig.yml` and `fig-init` folder's content to see how we orchestrated the dev/deploy environment.
 
 You will most likely tweak the environment by modifying Fig related files.
+
+GUI
+---
+For front-end development, we recommend using a separate nginx container like `bluekvirus/webstarter` and run it
+in parallel with the django container. 
+
 
 References
 ----------

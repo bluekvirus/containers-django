@@ -9,5 +9,4 @@ psycopg2
 django-redis
 Celery
 django-celery
-django-pipeline
 uwsgi
