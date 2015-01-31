@@ -8,11 +8,11 @@ cache:
 mq:
     image: rabbitmq
 
-app:
+django:
     image: bluekvirus/django
     volumes:
-        - code:/code/django
-        - ./fig-init/app.sh:/metadata/django/init.sh
+        - code/django:/code
+        - ./fig-init/django/init.sh:/metadata/django/init.sh
     expose:
         - "80" #default runserver wsgi port
     links:
@@ -24,8 +24,8 @@ app:
 web:
     image: nginx
     volumes:
-        - ./fig-init/nginx-server.conf:/etc/nginx/conf.d/default.conf #(http)
+        - ./fig-init/web/nginx-server.conf:/etc/nginx/conf.d/default.conf #(http)
     links:
-        - app
+        - django
     ports:
         - "8000:80" #(access through http://<boot2docker ip>:8000 or http://localhost:8000 on non-mac os)

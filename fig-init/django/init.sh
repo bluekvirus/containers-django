@@ -1,11 +1,12 @@
 #!/bin/bash
-cd $DJANGO_PROJECT_DIR
+cd $PROJECT_DIR
 
 #auto detect project source code:
 SOURCE_DIR=django_apps
 if [ ! -e manage.py ]; then
     echo "Creating django project..."
     django-admin startproject $SOURCE_DIR .
+    chmod -R 777 $PROJECT_DIR
 else
     echo "Existing project found"
 fi

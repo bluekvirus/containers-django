@@ -13,7 +13,7 @@ Usage
 ```
 git clone https://github.com/bluekvirus/containers-django.git .
 ```
-Put your existing Django project code under `./code`. If the code folder doesn't exist or does not contain a `manage.py` script, a new blank project will be created for you there. 
+Put your existing Django project code under `./code/django`. If the code folder doesn't exist or does not contain a `manage.py` script, a new blank project will be created for you there. 
 
 **Run** `fig up -d` to build and start the containers. 
 
@@ -43,6 +43,7 @@ GUI
 For front-end development, we recommend using a separate nginx container like `bluekvirus/webstarter` and run it
 in parallel with the django container. 
 
+Add other containers as services through `fig.yml`.
 
 References
 ----------
