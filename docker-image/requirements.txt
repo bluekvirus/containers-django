@@ -1,10 +1,10 @@
-Django
+django
 djangorestframework
-markdown
+Markdown
 django-rest-swagger
 mongoengine
 psycopg2
 django-redis
-Celery
+celery
 django-celery
 uwsgi
